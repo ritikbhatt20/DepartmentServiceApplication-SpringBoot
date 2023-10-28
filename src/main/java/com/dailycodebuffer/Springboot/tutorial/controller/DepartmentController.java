@@ -3,6 +3,7 @@ package com.dailycodebuffer.Springboot.tutorial.controller;
 import com.dailycodebuffer.Springboot.tutorial.entity.Department;
 import com.dailycodebuffer.Springboot.tutorial.service.DepartmentService;
 import com.dailycodebuffer.Springboot.tutorial.service.DepartmentServiceImpl;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.http.MediaType;
@@ -20,7 +21,7 @@ public class DepartmentController {
     private DepartmentService departmentService;
 
     @PostMapping("/departments")
-   public Department saveDepartment(@RequestBody Department department){
+   public Department saveDepartment(@Valid @RequestBody Department department){
 //      Post request that I will do from any of the rest client, I will be passing the request body as well, that will be entire json object
 //        convert the entire json object into the dep. object
 //        Now I will have to call the service layer to pass this data to do all the business logic
@@ -46,5 +47,10 @@ public class DepartmentController {
    public Department updateDepartment(@PathVariable("id") Long departmentId, @RequestBody Department department){
         return departmentService.updateDepartment(departmentId, department);
    }
+//   creating some new endpoints, fetch data by name
+    @GetMapping("/departments/name/{name}")
+    public Department fetchDepartmentByName(@PathVariable("name") String departmentName){
+        return departmentService.fetchDepartmentByName(departmentName);
+    }
 }
 

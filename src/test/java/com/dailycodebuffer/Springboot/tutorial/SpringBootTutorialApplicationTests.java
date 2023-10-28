@@ -6,8 +6,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class SpringBootTutorialApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+//	For every layer, we will be doing the Mocking
 
 }

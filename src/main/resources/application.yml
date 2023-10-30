@@ -9,7 +9,7 @@ logging:
 ---
 
 server:
-  port: 8082
+  port: 8083
 
 spring:
   profiles:
@@ -52,6 +52,14 @@ spring:
     show-sql: true
 welcome:
   message: Welcome to daily code buffer jj!!
+
+#  Enabling all the available endpoints for actuators
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "env, beans"
 
 ---
 

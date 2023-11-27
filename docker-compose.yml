@@ -4,15 +4,11 @@ services:
   mysql:
     image: mysql:5.7
     container_name: mysql_container
-    ports:
-      - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: W@2915djkq#
-      MYSQL_DATABASE: dcbapp-qa
-      MYSQL_USER: app_user
-      MYSQL_PASSWORD: 12345678
-    volumes:
-      - mysql_data:/var/lib/mysql
+      MYSQL_ROOT_PASSWORD: 8Jsc7nUXyG  # Update to the FreeSQLDatabase.com root password
+      MYSQL_DATABASE: sql5665576  # Update to the database name (dcbapp-qa)
+      MYSQL_USER: sql5665576  # Update to the database user (app_user)
+      MYSQL_PASSWORD: 8Jsc7nUXyG  # Update to the user's password (12345678)
 
   spring-app:
     image: openjdk:17-jdk-slim
@@ -20,12 +16,9 @@ services:
     ports:
       - "8080:8080"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/dcbapp-qa
-      SPRING_DATASOURCE_USERNAME: app_user
-      SPRING_DATASOURCE_PASSWORD: 12345678
+      SPRING_DATASOURCE_URL: jdbc:mysql://sql5.freesqldatabase.com:3306/sql5665576  # Update to the FreeSQLDatabase.com details
+      SPRING_DATASOURCE_USERNAME: sql5665576  # Update to the database user (app_user)
+      SPRING_DATASOURCE_PASSWORD: 8Jsc7nUXyG  # Update to the user's password (12345678)
     depends_on:
       - mysql
 
-volumes:
-  mysql_data:
-    driver: local

@@ -1,81 +1,81 @@
-#application.yml file used for adding configurations as it is more in human readable format \
-logging:
-  level:
-    org:
-      springframework:
-        web: DEBUG
-#        Profiles
-#we can create new documents using ---
----
-
-server:
-  port: 8080
-
-spring:
-  profiles:
-    active: qa
-
----
-
-spring:
-  config:
-    activate:
-      on-profile:
-        - dev
-  datasource:
-      driver-class-name: com.mysql.jdbc.Driver
-      password: W@2915djkq#
-      url: jdbc:mysql://localhost:3306/dcbapp
-      username: root
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-welcome:
-  message: Welcome to daily code buffer jj!!
-
----
-
-spring:
-  config:
-    activate:
-      on-profile:
-        - qa
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    password: W@2915djkq#
-    url: jdbc:mysql://localhost:3306/dcbapp-qa
-    username: root
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-welcome:
-  message: Welcome to daily code buffer jj!!
-
-#  Enabling all the available endpoints for actuators
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-        exclude: "env, beans"
-
----
-
-spring:
-  config:
-    activate:
-      on-profile:
-        - prod
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    password: W@2915djkq#
-    url: jdbc:mysql://localhost:3306/dcbapp-prod
-    username: root
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-welcome:
-  message: Welcome to daily code buffer jj!!
+##application.yml file used for adding configurations as it is more in human readable format \
+#logging:
+#  level:
+#    org:
+#      springframework:
+#        web: DEBUG
+##        Profiles
+##we can create new documents using ---
+#---
+#
+#server:
+#  port: 8080
+#
+#spring:
+#  profiles:
+#    active: qa
+#
+#---
+#
+#spring:
+#  config:
+#    activate:
+#      on-profile:
+#        - dev
+#  datasource:
+#      driver-class-name: com.mysql.jdbc.Driver
+#      password: W@2915djkq#
+#      url: jdbc:mysql://localhost:3306/dcbapp
+#      username: root
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+#welcome:
+#  message: Welcome to daily code buffer jj!!
+#
+#---
+#
+#spring:
+#  config:
+#    activate:
+#      on-profile:
+#        - qa
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    password: W@2915djkq#
+#    url: jdbc:mysql://localhost:3306/dcbapp-qa
+#    username: root
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+#welcome:
+#  message: Welcome to daily code buffer jj!!
+#
+##  Enabling all the available endpoints for actuators
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
+#        exclude: "env, beans"
+#
+#---
+#
+#spring:
+#  config:
+#    activate:
+#      on-profile:
+#        - prod
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    password: W@2915djkq#
+#    url: jdbc:mysql://localhost:3306/dcbapp-prod
+#    username: root
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+#welcome:
+#  message: Welcome to daily code buffer jj!!

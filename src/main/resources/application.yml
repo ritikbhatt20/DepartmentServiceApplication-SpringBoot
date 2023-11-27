@@ -23,7 +23,7 @@ spring:
       on-profile:
         - dev
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     password: W@2915djkq#
     url: jdbc:mysql://localhost:3306/dcbapp
     username: root
@@ -42,7 +42,7 @@ spring:
       on-profile:
         - qa
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     password: W@2915djkq#
     url: jdbc:mysql://localhost:3306/dcbapp-qa
     username: root
@@ -69,7 +69,7 @@ spring:
       on-profile:
         - prod
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     password: W@2915djkq#
     url: jdbc:mysql://localhost:3306/dcbapp-prod
     username: root

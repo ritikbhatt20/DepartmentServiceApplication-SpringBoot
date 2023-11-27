@@ -7,4 +7,4 @@ RUN mvn clean package -DskipTests
 FROM openjdk:17-jdk-slim
 COPY --from=build /target/Spring-boot-tutorial-1.0.0.jar Spring-boot-tutorial.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","Sprinṭg-boot-tutorial.jar"]
+ENTRYPOINT ["java","-jar","Spring-boot-tutorial.jar"]
